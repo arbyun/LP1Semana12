@@ -1,4 +1,6 @@
-﻿namespace MyGenericClass
+﻿using System;
+
+namespace MyGenericClass
 {
     public class Guarda3<T>
     {
@@ -13,6 +15,16 @@
             item3 = default(T);
         }
         
-        
+        public T GetItem(int i)
+        {
+            if (i == 0)
+                return item1;
+            else if (i == 1)
+                return item2;
+            else if (i == 2)
+                return item3;
+            else
+                throw new IndexOutOfRangeException();
+        }
     }
 }
