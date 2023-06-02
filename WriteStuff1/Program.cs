@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace WriteStuff1
 {
@@ -27,6 +28,26 @@ namespace WriteStuff1
                     break;
 
                 stringQueue.Enqueue(input);
+            }
+
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filename))
+                {
+                    while (stringQueue.Count > 0)
+                    {
+                        string str = stringQueue.Dequeue();
+                        writer.WriteLine(str);
+                    }
+                }
+
+                Console.WriteLine($"Strings saved to {filename}");
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine("Error saving strings to file:");
+                Console.WriteLine(e.Message);
+
             }
         }
     }
