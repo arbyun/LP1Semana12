@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace WriteStuff1
 {
@@ -14,6 +15,19 @@ namespace WriteStuff1
 
             string filename = args[0];
 
+            Queue<string> stringQueue = new Queue<string>();
+
+            Console.WriteLine("Enter strings (press Enter to stop):");
+
+            while (true)
+            {
+                string input = Console.ReadLine();
+
+                if (string.IsNullOrEmpty(input))
+                    break;
+
+                stringQueue.Enqueue(input);
+            }
         }
     }
 }
