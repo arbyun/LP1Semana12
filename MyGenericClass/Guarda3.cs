@@ -6,5 +6,13 @@
         private T item2;
         private T item3;
         
+        public Guarda3()
+        {
+            item1 = default(T);
+            item2 = default(T);
+            item3 = default(T);
+        }
+        
+        
     }
 }
