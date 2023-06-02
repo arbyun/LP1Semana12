@@ -15,6 +15,14 @@ namespace HowManyOfThisType
                 456,
                 "string 3"
             };
+            
+            int count = Checker.HowManyOfType<string>(collection);
+            Console.WriteLine("Number of strings in the collection: " + count);
+
+            count = Checker.HowManyOfType<int>(collection);
+            Console.WriteLine("Number of integers in the collection: " + count);
+
+            Console.ReadLine();
         }
     }
 }
