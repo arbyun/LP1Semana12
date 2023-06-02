@@ -6,7 +6,14 @@ namespace WriteStuff1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            if (args.Length == 0)
+            {
+                Console.WriteLine("Usage: dotnet run --project WriteStuff1 -- <filename>");
+                return;
+            }
+
+            string filename = args[0];
+
         }
     }
 }
